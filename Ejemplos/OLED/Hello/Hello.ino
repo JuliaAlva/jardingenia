@@ -37,10 +37,42 @@ void setup()
   
 
 }
+#define Pin1 =;
+#define Pin2 =;
+#define Pin3 =;
+#define Pin4 =;
+#define Pin5 =;
+#define Pin6 =;
 
-void loop()
-{
-  
+
+ void setup(){
+    Wire.begin();	
+    SeeedOled.init();
+    SeeedOled.setBrightness(unsigned char Brightness)
+    SeeedOled.setTextXY(unsigned char Row, unsigned char Column);
+    SeeedOled.setHorizontalScrollProperties(bool direction,unsigned char startPage, unsigned char endPage, unsigned char scrollSpeed);
+    SeeedOled.clearDisplay();
+ }
+ void loop(){
+     if(digitalRead(Pin1)== HIGH )
+       SeeedOled.setTextXY(1,0);             
+       SeeedOled.putString("Temp: " + digitalWrite(Pin1)+ " °C");
+    else if(digitalRead(Pin2)== HIGH )
+       SeeedOled.setTextXY(2,0);             
+       SeeedOled.putString("HumA: " + digitalWrite(Pin2) + " %");
+    else if(digitalRead(Pin3)== HIGH )
+       SeeedOled.setTextXY(3,0);             
+       SeeedOled.putString("HumS: " + digitalWrite(Pin3) + " %");
+    else if(digitalRead(Pin4)== HIGH )
+       SeeedOled.setTextXY(4,0);             
+       SeeedOled.putString("Luz: " + digitalWrite(Pin4) + " lumen");
+    else if(digitalRead(Pin5)== HIGH )
+       SeeedOled.setTextXY(5,0);             
+       SeeedOled.putString("Flujo " + digitalWrite(Pin5) + " %");
+    else if(digitalRead(Pin6)== HIGH )
+       SeeedOled.setTextXY(6,0);             
+       SeeedOled.putString("Test Case ");
+   
 }
 
 
